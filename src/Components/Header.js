@@ -18,8 +18,8 @@ function Header() {
 
   return (
     <nav className='nav'>
-      <div className= 'navbar'>
-          <div className ={navbar ? "nav-items active" : 'nav-items'}>
+      <div className={navbar ? 'navbar active' : 'navbar'}>
+          <div className = "nav-items">
               <button className="nav-items-list"><Link to='/'>Home</Link></button>
               <button className="nav-items-list"><Link to='/offers'>Offers</Link></button>
               <button className="nav-items-list"><Link to='/products'>Products</Link></button>
