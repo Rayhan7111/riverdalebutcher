@@ -29,7 +29,7 @@
 }
 
 .navbar-button {
-    padding-top: 13px;
+    padding-top: 20px;
     padding-right: 45px;
 }
 
@@ -53,9 +53,9 @@
 }
 
 .horizontal-line {
-    width : 75%;
-    margin-top: -3px;
-    align-items: center;
+    width : 43%;
+    margin-top: -12px;
+    margin-left: 240px;
 }
 
 @media only screen and (max-width: 1120px) {
