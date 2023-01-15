@@ -1,25 +1,38 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import './Header.css'
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import './Header.css';
 
 function Header() {
+  const[navbar, setNavbar] = useState(false);
+
+  const changeBackground = () =>{
+    console.log(window.scrollY);
+    if(window.scrollY >= 90) {
+      setNavbar(true)
+    } else {
+      setNavbar(false);
+    }
+  }
+
+  window.addEventListener('scroll', changeBackground);
+
   return (
-    <nav>
-      <div className="navbar">
-          <div className ="nav-items">
-              <button className="nav-items-list"><Link to='/' style={{ textDecoration: 'none', color: 'white' }}>Home</Link></button>
-              <button className="nav-items-list"><Link to='/offers' style={{ textDecoration: 'none', color: 'white' }}>Offers</Link></button>
-              <button className="nav-items-list"><Link to='/products' style={{ textDecoration: 'none', color: 'white' }}>Products</Link></button>
-              <button className="nav-items-list"><Link to='/services' style={{ textDecoration: 'none', color: 'white' }}>Services</Link></button>
-              <button className="nav-items-list"><Link to='/delivery' style={{ textDecoration: 'none', color: 'white' }}>Delivery</Link></button>
-              <button className="nav-items-list"><Link to='/about us' style={{ textDecoration: 'none', color: 'white' }}>About Us</Link></button>
+    <nav className='nav'>
+      <div className= 'navbar'>
+          <div className ={navbar ? "nav-items active" : 'nav-items'}>
+              <button className="nav-items-list"><Link to='/'>Home</Link></button>
+              <button className="nav-items-list"><Link to='/offers'>Offers</Link></button>
+              <button className="nav-items-list"><Link to='/products'>Products</Link></button>
+              <button className="nav-items-list"><Link to='/services'>Services</Link></button>
+              <button className="nav-items-list"><Link to='/delivery'>Delivery</Link></button>
+              <button className="nav-items-list"><Link to='/about us'>About Us</Link></button>
           </div>
           <div className="navbar-button">
-              <button className='button-signup'><Link to='/signup' style={{ textDecoration: 'none', color: 'white'}}>SIGNUP</Link></button>
-              <button className='button-login'><Link to='/login' style={{ textDecoration: 'none', color: 'white'}}>LOGIN</Link></button>
+              <button className='button-signup'><Link to='/signup'>SIGNUP</Link></button>
+              <button className='button-login'><Link to='/login'>LOGIN</Link></button>
           </div>
       </div>
-      <hr className='horizontal-line'></hr>
+      {/* <hr className='horizontal-line'></hr> */}
     </nav>
   )
   
