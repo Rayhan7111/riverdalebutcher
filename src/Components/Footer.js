@@ -3,10 +3,10 @@ import './Footer.css';
 
 function Footer() {
   return (
-    <footer class="footer">
-  	 <div class="container">
-  	 	<div class="row">
-  	 		<div class="footer-col">
+    <footer className="footer">
+  	 <div className="container">
+  	 	<div className="row">
+  	 		<div className="footer-col">
   	 			<h4>company</h4>
   	 			<ul>
   	 				<li><a href="#">about us</a></li>
@@ -15,7 +15,7 @@ function Footer() {
   	 				<li><a href="#">Membership</a></li>
   	 			</ul>
   	 		</div>
-  	 		<div class="footer-col">
+  	 		<div className="footer-col">
   	 			<h4>get help</h4>
   	 			<ul>
   	 				<li><a href="#">FAQ</a></li>
@@ -25,7 +25,7 @@ function Footer() {
   	 				<li><a href="#">payment options</a></li>
   	 			</ul>
   	 		</div>
-  	 		<div class="footer-col">
+  	 		<div className="footer-col">
   	 			<h4>online shop</h4>
   	 			<ul>
   	 				<li><a href="#">Meat</a></li>
@@ -34,12 +34,12 @@ function Footer() {
   	 				<li><a href="#">Deshi Food</a></li>
   	 			</ul>
   	 		</div>
-  	 		<div class="footer-col">
+  	 		<div className="footer-col">
   	 			<h4>follow us</h4>
-  	 			<div class="social-links">
-                    <a href="#" class="fa fa-facebook"></a>
-                    <a href="#" class="fa fa-twitter"></a>
-  	 				<a href="#" class="fa fa-instagram"></a>
+  	 			<div className="social-links">
+                    <a href="#" className="fa fa-facebook"></a>
+                    <a href="#" className="fa fa-twitter"></a>
+  	 				<a href="#" className="fa fa-instagram"></a>
   	 				
   	 			</div>
   	 		</div>

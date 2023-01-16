@@ -7,6 +7,7 @@
 body{
 	line-height: 1.5;
 	font-family: 'Poppins', sans-serif;
+	min-height: 100vh;/*for sticky footer section*/
 }
 
 .container{
@@ -26,7 +27,8 @@ ul{
 .footer{
 	background-color: #24262b;
     padding: 70px 0;
-	position: fixed;
+	position: sticky;/*for sticky footer section*/
+	top: 100%;/*for sticky footer section*/
 	bottom: 0;
 	width: 100%;
 }
@@ -102,6 +104,7 @@ ul{
 }
 
 }
+
 @media(max-width: 574px){
   .footer-col{
     width: 100%;
