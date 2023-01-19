@@ -3,26 +3,52 @@ import { Box } from '@mui/system'
 import React, { useState } from 'react'
 
 function Delivery() {
+  
+  const[user, setUser] = useState({});
 
-  const[firstName, setfirstName] = useState("");
-  const[email, setEmail] = useState("");
-  const[password, setPassword] = useState("");
+  const handleUser = (event) => {
+
+    event.preventDefault();
+    const form = event.target;
+    console.log(user);
+
+    fetch('http://localhost:5000/users', {
+      method: 'POST',
+      headers: {'content-type': 'application/json'},
+      body: JSON.stringify(user)
+    })
+
+    .then(res => res.json())
+    .then(data => {
+      if(data.acknowledged){
+        alert('user added sucessfully')
+        form.reset();
+      }
+      //console.log(data)
+    })
+  }
 
   const handleData = (event) => {
-    event.preventDefault();
+
+    const form = event.target;
+    const field = form.name; //field = firstname 
+    const value = form.value;// value =  inputed value on client side
+    const newUser = {...user};
+    newUser[field] = value;
+    setUser(newUser);
 
     // const form = event.target;
     // setfirstName(form.firstName.value)
     // setEmail(form.email.value)
     // setPassword(form.password.value)
-    console.log(firstName,email,password)
+
   }
 
   return (
     <div>
       <Box>
 
-        <form onSubmit={handleData}>
+        <form onSubmit={handleUser}>
 
         <TextField
         id="firstname"      
@@ -31,8 +57,7 @@ function Delivery() {
         type="text"
         label="firstname"
         name="firstname"
-        onChange={(event) => setfirstName(event.target.value)}
-        value = {firstName}
+        onBlur={handleData}
         />
 
         <TextField
@@ -42,8 +67,7 @@ function Delivery() {
         label="Email Address"
         name="email"
         autoComplete="email"
-        onChange={(event) => setEmail(event.target.value)}
-        value = {email}
+        onBlur={handleData}
         />
 
         <TextField
@@ -53,8 +77,7 @@ function Delivery() {
         label="password"
         name="password"
         type="password"
-        onChange={(event) => setPassword(event.target.value)}
-        value = {password}
+        onBlur={handleData}
         />
 
         <Button variant="contained" type='submit'>
