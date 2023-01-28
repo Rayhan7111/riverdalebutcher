@@ -1,17 +1,16 @@
-* {
-    font-family: 'Poppins';
-    margin: 0;
+*, 
+*::before,
+*::after{
     padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "poppins";
 }
 
-a {
+a{
     color: rgb(255, 255, 255);
     text-decoration: none; /* no underline */
   }
-
-.nav-items a:hover {
-    color: rgb(146, 146, 146);
-}
 
 .navbar {
     width: 100%;
@@ -20,14 +19,6 @@ a {
     justify-content: space-around;
     flex-direction: row;
     background-color: none;
-}
-
-.navbar .nav-items-list {
-    flex: 50%;
-    height: 100%;
-    padding-left: 50px;
-    align-items: center;
-    
 }
 
 .navbar-logo a{
@@ -45,20 +36,37 @@ a {
 }
 
 .nav-items-list {
+    flex: 50%;
+    height: 100%;
+    padding-left: 50px;
+    align-items: center;
     font-size: 22px;
     font-weight: bolder;
     background: none;
     border: none;
-    text-decoration: none;
+    text-decoration: none;   
 }
 
-.nav-items-list:hover {
+
+/* .nav-items-list:hover {
     font-size: 23px;
     font-weight: bolder;
     transition: all 300ms ease-in-out;
-    background: none;
-    border: none;
-    text-decoration: none;
+} */
+
+.navbar .nav-items-list a::after{
+    content: "";
+    font-size: 30px;
+    /* background-color: #1a6b3c;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    left: 0;
+    bottom: -10px; */
+}
+
+.navbar .nav-items-list a:hover::after{
+    width: 100%;
 }
 
 .navbar-button {
@@ -94,13 +102,6 @@ a {
     font-size: 20px;
     border-radius: 10px;
 }
-
-.horizontal-line {
-    width : 43%;
-    margin-top: -12px;
-    margin-left: 240px;
-}
-
 
 .active {
     width: 100%;

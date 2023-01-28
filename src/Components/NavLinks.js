@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 
 
-function NavLinks() {
+function NavLinks(props) {
     const [navbar, setNavbar] = useState(false);
   
     const changeBackground = () => {
@@ -17,7 +17,7 @@ function NavLinks() {
     window.addEventListener("scroll", changeBackground);
 
     return (
-      
+
         <div className={navbar? "navbar active" : "navbar"}>
 
           <button className="navbar-logo">
@@ -25,22 +25,22 @@ function NavLinks() {
           </button>
             
           <div className="nav-items">
-            <button className="nav-items-list">
+            <button onClick={() => props.isMobile && props.closeMobileMenu()}className="nav-items-list">
               <Link to="/">Home</Link>
             </button>
-            <button className="nav-items-list">
+            <button onClick={() => props.isMobile && props.closeMobileMenu()}className="nav-items-list">
               <Link to="/offers">Offers</Link>
             </button>
-            <button className="nav-items-list">
+            <button onClick={() => props.isMobile && props.closeMobileMenu()}className="nav-items-list">
               <Link to="/products">Products</Link>
             </button>
-            <button className="nav-items-list">
+            <button onClick={() => props.isMobile && props.closeMobileMenu()}className="nav-items-list">
               <Link to="/services">Services</Link>
             </button>
-            <button className="nav-items-list">
+            <button onClick={() => props.isMobile && props.closeMobileMenu()}className="nav-items-list">
               <Link to="/delivery">Delivery</Link>
             </button>
-            <button className="nav-items-list">
+            <button onClick={() => props.isMobile && props.closeMobileMenu()}className="nav-items-list">
               <Link to="/about us">About Us</Link>
             </button>
           </div>
