@@ -58,7 +58,7 @@ footer{
 	height: 2px;
 	box-sizing: border-box;
 	width: 50px;
-}
+}  
 
 .footer-col ul li:not(:last-child){
 	margin-bottom: 10px;
