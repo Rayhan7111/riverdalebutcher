@@ -1,6 +1,6 @@
-import { Button, TextField } from '@mui/material'
-import { Box } from '@mui/system'
+import { Button, TextField, Typography, Card, CardContent, Grid } from '@mui/material'
 import React, { useState } from 'react'
+import './Delivery.css' 
 
 function Delivery() {
   
@@ -45,47 +45,42 @@ function Delivery() {
   }
 
   return (
-    <div>
-      <Box>
+    <div className='delivery-container'>
+      <Typography gutterBottom variant="h3" align="center">
+        Delivery
+      </Typography>
 
+      <Card>
+        <CardContent>
+          <Grid container spacing={1}>
+
+            <Grid xs ={12} sm= {6} item>
+            <TextField label="First Name" placeholder="Enter Your First Name" variant="outlined" fullWidth onBlur={handleData} required/>
+            </Grid>
+
+            <Grid xs ={12} sm= {6} item>
+            <TextField label="Surname" placeholder="Enter Your Surname" variant="outlined" fullWidth onBlur={handleData} required/>
+            </Grid>
+
+            <Grid xs ={12} item>
+            <TextField label="Email" placeholder="Enter Your Email" variant="outlined" fullWidth onBlur={handleData} required/>
+            </Grid>
+
+            <Grid xs ={12} sm= {6} item>
+            <TextField type = "email" label="Password" placeholder="Enter first name" variant="outlined" fullWidth onBlur={handleData} required/>
+            </Grid>
+
+
+          </Grid>
+        </CardContent>
+      </Card> 
         <form onSubmit={handleUser}>
-
-        <TextField
-        id="firstname"      
-        margin='normal'
-        required
-        type="text"
-        label="firstname"
-        name="firstname"
-        onBlur={handleData}
-        />
-
-        <TextField
-        id="email"      
-        margin='normal'
-        required
-        label="Email Address"
-        name="email"
-        autoComplete="email"
-        onBlur={handleData}
-        />
-
-        <TextField
-        id="password"      
-        margin='normal'
-        required
-        label="password"
-        name="password"
-        type="password"
-        onBlur={handleData}
-        />
 
         <Button variant="contained" type='submit'>
           Send
         </Button>
         </form>
-        
-      </Box>  
+      
     </div>  
   )
 }

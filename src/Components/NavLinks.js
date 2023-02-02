@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 
 function NavLinks(props) {
     const [navbar, setNavbar] = useState(false);
   
     const changeBackground = () => {
-      console.log(window.scrollY);
+      // console.log(window.scrollY);
       if (window.scrollY >= 20) {
         setNavbar(true);
       } else {

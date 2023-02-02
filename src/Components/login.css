@@ -1,0 +1,15 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+
+.login-container{
+    background-color: white;
+    height: 80vh;
+}
+
+.container{
+    margin: auto;
+    width: "90%";
+}
