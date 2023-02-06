@@ -46,41 +46,45 @@ function Delivery() {
 
   return (
     <div className='delivery-container'>
-      <Typography gutterBottom variant="h3" align="center">
+      <Typography gutterBottom variant="h4" align="center">
         Delivery
       </Typography>
 
-      <Card>
+      <Card style={{maxWidth:450, margin:"0 auto", padding:"20px 5px"}}>
         <CardContent>
+          <Typography gutterBottom variant='h5'>Contact Us</Typography>
+          <Typography gutterBottom variant='body2' color="textSecondary" component="p">Fill up the form and our team will preapre you groceries.</Typography>
+          <form onSubmit={handleUser}>
           <Grid container spacing={1}>
 
             <Grid xs ={12} sm= {6} item>
-            <TextField label="First Name" placeholder="Enter Your First Name" variant="outlined" fullWidth onBlur={handleData} required/>
+            <TextField name="firstname" label="First Name" placeholder="Enter Your First Name" variant="outlined" fullWidth onBlur={handleData} required/>
             </Grid>
 
             <Grid xs ={12} sm= {6} item>
-            <TextField label="Surname" placeholder="Enter Your Surname" variant="outlined" fullWidth onBlur={handleData} required/>
+            <TextField name="surname" label="Surname" placeholder="Enter Your Surname" variant="outlined" fullWidth onBlur={handleData} required/>
             </Grid>
 
             <Grid xs ={12} item>
-            <TextField label="Email" placeholder="Enter Your Email" variant="outlined" fullWidth onBlur={handleData} required/>
+            <TextField name="email" type="email" label="Email" placeholder="Enter Your Email" variant="outlined" fullWidth onBlur={handleData} required/>
             </Grid>
 
-            <Grid xs ={12} sm= {6} item>
-            <TextField type = "email" label="Password" placeholder="Enter first name" variant="outlined" fullWidth onBlur={handleData} required/>
+            <Grid xs ={12} item>
+            <TextField name="phone" type="number" label="Phone" placeholder="Enter Your phone number" variant="outlined" fullWidth onBlur={handleData} required/>
             </Grid>
 
+            <Grid xs ={12} item>
+            <TextField name="message" label="Message" multiline rows={4} placeholder="Enter Your message" variant="outlined" fullWidth onBlur={handleData} required/>
+            </Grid>
 
+            <Grid xs ={12} item>
+            <Button type='submit' variant="contained" color='primary' fullWidth>Submit</Button>
+            </Grid>
+            
           </Grid>
+          </form>
         </CardContent>
       </Card> 
-        <form onSubmit={handleUser}>
-
-        <Button variant="contained" type='submit'>
-          Send
-        </Button>
-        </form>
-      
     </div>  
   )
 }
