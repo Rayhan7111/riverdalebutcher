@@ -4,3 +4,8 @@
     box-sizing: border-box;
 }
 
+.delivery-container{
+    background-color: white;
+    height: 60vh;
+}
+
