@@ -1,5 +1,5 @@
-import { Button, TextField } from '@mui/material'
-import { Box } from '@mui/system'
+// import { Button, TextField } from '@mui/material'
+// import { Box } from '@mui/system'
 import React, { useState } from 'react'
 
 function Delivery() {
@@ -10,16 +10,13 @@ function Delivery() {
 
   const handleData = (event) => {
     event.preventDefault();
-
-    // const form = event.target;
-    // setfirstName(form.firstName.value)
-    // setEmail(form.email.value)
-    // setPassword(form.password.value)
     console.log(firstName,email,password)
   }
 
   return (
     <div>
+    <div>Delivery</div>
+    {/* <div>
       <Box>
 
         <form onSubmit={handleData}>
@@ -63,6 +60,7 @@ function Delivery() {
         </form>
         
       </Box>  
+    </div> */}
     </div>  
   )
 }
